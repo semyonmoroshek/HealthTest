@@ -15,9 +15,6 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    int healthLevel = 0;
-    int buttonClicked = 0;
-
     @BindView(R.id.btn_yes) Button btnYes;
     @BindView(R.id.btn_sometms) Button btnSometimes;
     @BindView(R.id.btn_no) Button btnNo;
@@ -25,11 +22,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.pb_progress) ProgressBar userProgressBar;
 
     private int mQuestionIndex = 0;
-    private int mQuestion;
     private int yesAnswerCount = 0;
     private int noAnswerCount = 0;
     private int sometimesAnswerCount = 0;
-    private int totalScore = 0;
 
     private Question[] questionCollection = new Question[]{
             new Question(R.string.q1),
@@ -46,11 +41,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        displayNewQuestion();
+        startTest();
 
         btnYes.setOnClickListener(View -> yesAnswer());
         btnSometimes.setOnClickListener(View -> sometimesAnswer());
         btnNo.setOnClickListener(View -> noAnswer());
+    }
+
+    private void startTest() {
+        displayNewQuestion();
     }
 
     private void sometimesAnswer() {
@@ -69,11 +68,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayNewQuestion() {
+        if(mQuestionIndex > 0){
+            userProgressBar.incrementProgressBy(userProgresStep);
+        }
         if (mQuestionIndex < questionCollection.length) {
             Question question = questionCollection[mQuestionIndex];
-            mQuestion = question.getQuestionNumber();
-            txtQuestion.setText(mQuestion);
-            userProgressBar.incrementProgressBy(userProgresStep);
+            int question1 = question.getQuestionNumber();
+            txtQuestion.setText(question1);
             mQuestionIndex++;
         } else {
             resetApp();
@@ -81,9 +82,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void resetApp() {
-        Toast.makeText(this, "your result: " + totalScore, Toast.LENGTH_LONG).show();
+        viewResult();
         mQuestionIndex = 0;
         userProgressBar.setProgress(0);
         displayNewQuestion();
+    }
+
+    private void viewResult() {
+        if (yesAnswerCount > noAnswerCount && yesAnswerCount > sometimesAnswerCount) {
+            Toast.makeText(this, "your result: " + "you will have bad health", Toast.LENGTH_LONG).show();
+        }
+        if (noAnswerCount > yesAnswerCount && noAnswerCount > sometimesAnswerCount) {
+            Toast.makeText(this, "your result: " + "you will have good health", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "your result: " + "you have a normal health", Toast.LENGTH_LONG).show();
+        }
     }
 }

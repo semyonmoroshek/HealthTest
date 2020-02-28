@@ -7,9 +7,9 @@
     <string name="no">no</string>
     <string name="sometimes">sometimes</string>
 
-    <string name="q1">Are you eat healthy food?</string>
-    <string name="q2">Are you drink steal water more then 2 L/day?</string>
-    <string name="q3">Are you sleep more then 7 our/night?</string>
+    <string name="q1">Are you eat fast food?</string>
+    <string name="q2">Are you drink lemonade?</string>
+    <string name="q3">Are you sleep less then 7 our/night?</string>
     <string name="q4">Do you smoke?</string>
     <string name="q5">do you drink alcohol?</string>
 </resources>

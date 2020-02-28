@@ -16,8 +16,8 @@
         android:textSize="30sp" />
 
     <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
         android:id="@+id/pb_progress"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
@@ -26,9 +26,9 @@
         android:id="@+id/txt_question"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="15dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:layout_marginTop="15dp"
         android:text="@string/answer_to_check_your_health"
         android:textColor="#000000"
         android:textSize="30sp" />
@@ -38,28 +38,28 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="#00e676"
         android:text="@string/yes"
-        android:textSize="35sp"
-        android:background="#00e676"/>
+        android:textSize="35sp" />
 
     <Button
         android:id="@+id/btn_sometms"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="#ff9800"
         android:onClick="sometimes"
         android:text="@string/sometimes"
-        android:textSize="35sp"
-        android:background="#ff9800"/>
+        android:textSize="35sp" />
 
     <Button
         android:id="@+id/btn_no"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="#c30000"
         android:onClick="no"
         android:text="@string/no"
-        android:textSize="35sp"
-        android:background="#c30000"/>
+        android:textSize="35sp" />
 
 </LinearLayout>
