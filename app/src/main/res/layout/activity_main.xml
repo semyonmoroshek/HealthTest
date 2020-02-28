@@ -3,72 +3,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/yoga"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/displayTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="Health check"
-        android:textSize="20sp" />
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/health_check"
+        android:textColor="#000"
+        android:textSize="30sp" />
 
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/pb_progress"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <TextView
-        android:id="@+id/displayMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="15dp"
+        android:id="@+id/txt_question"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
         android:layout_marginTop="15dp"
-        android:text="Answer to check your health"
+        android:text="@string/answer_to_check_your_health"
         android:textColor="#000000"
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:onClick="startPush"
-        android:text="Start"
-        android:textSize="20sp" />
+        android:id="@+id/btn_yes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/yes"
+        android:textSize="35sp"
+        android:background="#00e676"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="50dp"
-        android:onClick="yes"
-        android:text="Yes"
-        android:textSize="35sp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
+        android:id="@+id/btn_sometms"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:onClick="sometimes"
-        android:text="Sometimes"
-        android:textSize="35sp" />
+        android:text="@string/sometimes"
+        android:textSize="35sp"
+        android:background="#ff9800"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
+        android:id="@+id/btn_no"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:onClick="no"
-        android:text="No"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:text=""
-        android:textSize="20sp" />
-
+        android:text="@string/no"
+        android:textSize="35sp"
+        android:background="#c30000"/>
 
 </LinearLayout>

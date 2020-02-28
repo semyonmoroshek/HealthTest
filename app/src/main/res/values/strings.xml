@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">HealthTest</string>
+    <string name="health_check">Health check</string>
+    <string name="answer_to_check_your_health">Answer to check your health</string>
+    <string name="yes">yes</string>
+    <string name="start">start</string>
+    <string name="no">no</string>
+    <string name="sometimes">sometimes</string>
+
+    <string name="q1">Are you eat healthy food?</string>
+    <string name="q2">Are you drink steal water more then 2 L/day?</string>
+    <string name="q3">Are you sleep more then 7 our/night?</string>
+    <string name="q4">Do you smoke?</string>
+    <string name="q5">do you drink alcohol?</string>
 </resources>
